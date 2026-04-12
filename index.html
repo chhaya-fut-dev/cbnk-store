@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>CBNK ⌂ E-Commerce | Indian Platform</title>
+    <link rel="shortcut icon" sizes="any" href="./favicon.jpg">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="whatsapp-popup.css">
+    <link rel="stylesheet" href="Cbn-menu.css">
+    <link rel="stylesheet" href="Cbn-profile.css">
+
+    <script src="Cbn-menu-&-profile.js"></script>
 </head>
 
 <body>
+    <div class="overlay" id="overlay" onclick="closeAll()"></div>
+
     <header>
         <div class="CbnBox-rootBlack">
             <div class="top-bar">
@@ -40,7 +47,9 @@
                         <i class="fa fa-search"></i>
                         <input type="text" placeholder="What are you looking for?" class="Cbn-search-box">
                     </div>
-                    <div class="space"></div>
+
+                    <div class="Cbn-space"></div>
+
                     <div class="nav-right">
                         <button class="login-btn">SIGN UP / SIGN IN</button>
                     </div>
@@ -94,7 +103,8 @@
 
         <div class="Cbn-offer-bar">
             <div class="Cbn-offer-container">
-                Flat 300 off on 1999. Code: CBNK300 | Flat 200 off on 1499. Code: CBNK200 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;›
+                Flat 300 off on 1999. Code: CBNK300 | Flat 200 off on 1499. Code: CBNK200
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;›
             </div>
         </div>
 
@@ -106,7 +116,7 @@
             <div class="Cbn-slide">
                 <img src="./exclusive-new-style.jpg" alt="">
                 <div class="Cbn-content">
-                    <div class="Cbn-badge">EXCLUSIVE NEW STYLES</div>
+                    <div class="Cbn-badge">NEW STYLES</div>
                     <div class="Cbn-price">Starting at ₹399</div>
                     <h1>FANDOM MERCH</h1>
                 </div>
@@ -133,7 +143,7 @@
             <div class="Cbn-slide">
                 <img src="./kids-wears.jpg" alt="">
                 <div class="Cbn-content">
-                    <div class="Cbn-badge">KIDS WEAR NOW ONLINE!</div>
+                    <div class="Cbn-badge">KIDS WEAR</div>
                     <div class="Cbn-price">Starting at ₹699</div>
                     <h1>FASHION SALE</h1>
                 </div>
@@ -143,13 +153,134 @@
         <div class="arrow left" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></div>
         <div class="arrow right" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></div>
 
-        
+        <div class="dots" id="dots"></div>
     </div>
 
-    <div class="dots" id="dots"></div>
+    <div class="container">
+        <div class="section-title">Character Mode: On</div>
+        <div class="card-row">
+            <div class="card">
+                <img src="./shop-man3.webp" alt="">
+                <span>Shop Men</span>
+            </div>
+            <div class="card">
+                <img src="./shop-women.jpg" alt="">
+                <span>Shop Women</span>
+            </div>
+            <div class="card">
+                <img src="./shop-boy.webp" alt="">
+                <span>Shop Boys</span>
+            </div>
+            <div class="card">
+                <img src="./shop-girls.jpg" alt="">
+                <span>Shop Girls</span>
+            </div>
+            <div class="card">
+                <img src="shop-add-ons.webp" alt="">
+                <span>Shop Add-Ons</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="Cbn-banner-container">
+
+        <div class="Cbn-banner">
+
+            <div class="Cbn-banner-left">
+                <h1>Unlock Savings Worth ₹1000+</h1>
+
+                <div class="Cbn-benefit">
+                    <div class="Cbn-icon"><i class="fa fa-truck"></i></div>
+                    <div>
+                        <h3>Free Delivery</h3>
+                        <p>On all orders, for 365 days!</p>
+                    </div>
+                </div>
+
+                <div class="Cbn-benefit">
+                    <div class="Cbn-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                    <div>
+                        <h3>Birthday Vouchers</h3>
+                        <p>For you & your loved one!</p>
+                    </div>
+                </div>
+
+                <div class="Cbn-benefit">
+                    <div class="Cbn-icon"><i class="fa-regular fa-star"></i></div>
+                    <div>
+                        <h3>Pre-sale Benefits</h3>
+                        <p>Exclusive early access & more</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="Cbn-banner-right">
+                <div class="Cbn-banner-card">
+                    <p class="Cbn-elite"><img src="./CBNK-LOGO.png" style="width: 100%;" alt=""></p>
+                    <h2>elite</h2>
+                    <span class="Cbn-sub">NEW LOOK. NEW REWARDS.</span>
+
+                    <div class="Cbn-elite-price">
+                        <p class="Cbn-price-mrp">₹499</p>
+                        <p class="Cbn-price-now">₹249</p>
+                        <span>Inclusive of all taxes</span>
+                    </div>
+
+                    <div class="Cbn-valid">Valid for 12 Months</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="Cbn-menu" id="Cbn-menu">
+        <a href="#" onclick="closeAll()">SIGN UP / SIGN IN</a>
+        <a href="#" onclick="closeAll()"></a>
+        <a href="#" onclick="closeAll()"></a>
+        <a href="#" onclick="closeAll()"></a>
+    </div>
+
+    <div class="Cbn-profile" id="CbnProfile">
+        <span class="Cbn-profile-close" onclick="closeAll()">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+        <h2>Your Cart</h2>
+        <div id="Cbn-Item"></div>
+        <h3>Total: ₹<span id="total">0</span></h3>
+    </div>
+
+    <div class="Cbn-bottom-nav">
+        <div class="Cbn-bottom-item menu-toggle" onclick="toggleMenu()">
+            <i class="fa fa-bars menu-icon"></i>
+            <span>Menu</span>
+        </div>
+        <a href="index.html" style="color: #000;">
+            <div class="Cbn-bottom-item">
+                <i class="fa fa-home"></i>
+                <span>Home</span>
+            </div>
+        </a>
+
+        <!--
+            <div class="Cbn-bottom-item">
+                <i class="fa fa-th-large"></i>
+                <span>Categories</span>
+            </div>
+        -->
+
+        <div class="Cbn-bottom-item cart-icon" onclick="toggleCart()">
+            <i class="fa fa-user"></i>
+            <span>Profile</span>
+        </div>
+    </div>
 
     <div class="Cbn-popup" id="whatsapp-popup">
-        <span class="Cbn-close-btn" onclick="closePopup()">✖</span>
+        <span class="Cbn-close-btn" onclick="closePopup()"><i class="fa-solid fa-xmark"></i></span>
         <h3>Contact Us</h3>
         <form onsubmit="submitForm(event)">
             <input type="text" id="name" placeholder="Your Name" required>
@@ -161,7 +292,6 @@
     </div>
 
     <button class="Cbn-floating-btn" onclick="openPopup()"><i class="fa-brands fa-whatsapp"></i></button>
-
 
     <script src="footer.js"></script>
     <script src="Cbn-slider.js"></script>

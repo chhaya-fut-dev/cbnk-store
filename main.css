@@ -63,11 +63,12 @@
   display: flex;
   background-color: #ecedeb;
   padding: 12px;
+  margin-left: 20px;
   width: 40%;
   align-items: center;
 }
 
-.space {
+.Cbn-space {
   width: 15%;
 }
 
@@ -197,7 +198,6 @@
   overflow: hidden;
   border-radius: 2px;
   background: #000;
-  cursor: pointer;
 }
 
 .Cbn-slides {
@@ -231,18 +231,87 @@
 .Cbn-content {
   position: absolute;
   top: 50%;
-  left: 60px;
+  left: 45px;
   transform: translateY(-50%);
   color: #fff;
   z-index: 2;
 }
 
-.Cbn-badge {
+.container {
+  max-width: 1276px;
+  margin: auto;
+  padding: 20px 10px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 50px;
+  height: 5px;
   background: #d1ac88;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+}
+
+.card-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.card-row::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  width: 237.8px;
+  height: 300px;
+  border-radius: 1px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: #ddd;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.card span {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.Cbn-badge {
+  background: #f7f8f7;
   padding: 10px 12px;
   font-size: 18px;
   font-weight: bold;
   display: inline-block;
+  color: #2b3f4e;
 }
 
 .Cbn-price {
@@ -258,7 +327,7 @@
 
 .Cbn-content h1 {
   font-size: 48px;
-  margin: 10px 0;
+  margin: 2px 0px;
   letter-spacing: 2px;
 }
 
@@ -266,10 +335,10 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #fff;
-  width: 40px;
+  background: #d1ac88;
+  width: 25px;
   height: 40px;
-  border-radius: 50px;
+  border-radius: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,16 +347,16 @@
 }
 
 .left {
-  left: 15px;
+  left: 10px;
 }
 
 .right {
-  right: 15px;
+  right: 10px;
 }
 
 .dots {
   position: relative;
-  bottom: 30px;
+  bottom: 25px;
   width: 100%;
   text-align: center;
 }
@@ -298,9 +367,143 @@
   margin: 0 4px;
   background: #bbb;
   display: inline-block;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .active {
   background: #d1ac88;
+  width: 20px;
+  margin: 0 2px;
+  border-radius: 10%;
+}
+
+.Cbn-bottom-nav {
+  display: none;
+}
+
+.Cbn-banner-container {
+  max-width: 1276px;
+  margin: 30px auto;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.Cbn-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+  border-radius: 1px;
+  padding: 100px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.Cbn-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 2px,
+    transparent 2px,
+    transparent 12px
+  );
+  opacity: 0.2;
+}
+
+.Cbn-banner-left {
+  max-width: 55%;
+  z-index: 1;
+  margin-left: 50px;
+}
+
+.Cbn-banner-left h1 {
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.Cbn-benefit {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #d1ac88;
+  color: #000;
+  padding: 22px 16px;
+  border-radius: 1px;
+  margin-bottom: 12px;
+  margin-left: 70px;
+}
+
+.Cbn-benefit .Cbn-icon {
+  font-size: 20px;
+}
+
+.Cbn-benefit h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.Cbn-benefit p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.Cbn-banner-right {
+  z-index: 1;
+}
+
+.Cbn-banner-card {
+  background: #000;
+  padding: 30px 25px;
+  border-radius: 1px;
+  text-align: center;
+  width: 220px;
+}
+
+.Cbn-banner-card .Cbn-elite {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.Cbn-banner-card h2 {
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+.Cbn-banner-card .Cbn-sub {
+  font-size: 11px;
+  color: #bbb;
+}
+
+.Cbn-elite-price {
+  margin-top: 20px;
+}
+
+.Cbn-price-mrp {
+  text-decoration: line-through;
+  color: #aaa;
+  margin: 0;
+}
+
+.Cbn-price-now {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.price span {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.Cbn-valid {
+  margin-top: 15px;
+  font-size: 12px;
+  background: #222;
+  padding: 6px;
+  border-radius: 0px;
 }
